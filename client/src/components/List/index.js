@@ -1,7 +1,8 @@
 import React from "react";
-import "./style.css";
 
-// This file exports both the List and ListItem components
+export function ListItem({ children }) {
+  return <li className="list-group-item">{children}</li>;
+}
 
 export function List({ children }) {
   return (
@@ -11,6 +12,3 @@ export function List({ children }) {
   );
 }
 
-export function ListItem({ children }) {
-  return <li className="list-group-item">{children}</li>;
-}

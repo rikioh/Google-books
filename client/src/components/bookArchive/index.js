@@ -15,10 +15,10 @@ class BookCard extends Component {
         this.state = {props}
     }
 
-    deleteBook(id) {
+    removeFromList(id) {
 
         console.log(this.props.data._id);
-        API.deleteBook(this.props.data._id)
+        API.removeFromList(this.props.data._id)
             .then(window.location.reload())
             .catch(err => console.log(err))
 
@@ -35,12 +35,12 @@ class BookCard extends Component {
                             <div className='row'>
                                 <img className='image' src={this.props.data.img}></img>
                             </div>
-                            <a href={this.props.data.link} className="btn btn-primary m-1" target='_blank'>View on Google</a>
-                            <button type='submit' className='btn btn-primary' onClick={()=>this.deleteBook()}>Delete</button>
+                            <a href={this.props.data.link} className="btn btn-primary m-1" target='_blank'>Check out this book some more</a>
+                            <button type='submit' className='btn btn-primary' onClick={()=>this.removeFromList()}>Delete the saved book</button>
                         </div>
                         <div className='col-md-9'>
                             <div className='card-body'>
-                                <h5 className='card-title'>Author(s): {this.props.data.author}</h5>
+                                <h5 className='card-title'>Author: {this.props.data.author}</h5>
                                 <div className='card-text'>{this.props.data.description}</div>
                             </div>
                         </div>

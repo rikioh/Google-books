@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import API from '../utils/API'
-import BookCard from '../components/SavedBook'
+import BookCard from '../components/bookArchive'
 
 function Saved() {
 

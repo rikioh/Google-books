@@ -29,7 +29,7 @@ function Books() {
         <Row>
           <Col size="md-6">
             <Jumbotron>
-              <h1>Add a books information.</h1>
+              <h1>Add a book's information.</h1>
             </Jumbotron>
             <form>
               <Input
