@@ -4,7 +4,7 @@ import buttonDelete from "../components/buttonDelete";
 import API from "../utils/API";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
-import { Input, TextArea, FormBtn } from "../components/Form";
+import { Input, TextField, buttonForm } from "../components/Form";
 
 function Books() {
 
@@ -52,18 +52,18 @@ function Books() {
                 name="image"
                 placeholder="Img"
               />
-              <TextArea
+              <TextField
                 onChange={() => {}}
                 name="description"
                 placeholder="Description"
               />
               
-              <FormBtn
+              <buttonForm
                 disabled={!(formObject.author && formObject.title)}
                 onClick={() => {}}
               >
                 Submit Book
-              </FormBtn>
+              </buttonForm>
             </form>
           </Col>
           <Col size="md-6 sm-12">

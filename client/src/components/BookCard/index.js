@@ -16,7 +16,7 @@ class BookCard extends Component {
     }
 
 
-    storeBook() {
+    keepBook() {
 
         var data = {
             title: this.state.props.data.volumeInfo.title,
@@ -40,14 +40,14 @@ class BookCard extends Component {
                     <div className='row g-0'>
                         <div className='col-md-3'>
                             <div className='row'>
-                                <img className='img' src={this.props.data.volumeInfo.imageLinks.thumbnail}></img>
+                                <img className='image' src={this.props.data.volumeInfo.imageLinks.thumbnail}></img>
                             </div>
-                            <a href={this.props.data.volumeInfo.previewLink} className="btn btn-primary m-1" target='_blank'>View on Google</a>
-                            <button className='btn btn-primary' onClick={()=>this.storeBook()}>Save</button>
+                            <a href={this.props.data.volumeInfo.previewLink} className="btn btn-primary m-1" target='_blank'>Look at this book in Google</a>
+                            <button className='btn btn-primary' onClick={()=>this.keepBook()}>Save this book to list</button>
                         </div>
                         <div className='col-md-9'>
                             <div className='card-body'>
-                                <h5 className='card-title'>Author(s): {this.props.data.volumeInfo.authors}</h5>
+                                <h5 className='card-title'>Author: {this.props.data.volumeInfo.authors}</h5>
                                 <div className='card-text'>{this.props.data.volumeInfo.description}</div>
                             </div>
                         </div>

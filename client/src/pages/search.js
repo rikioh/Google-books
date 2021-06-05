@@ -1,6 +1,6 @@
 import React, { useEffect, useState  } from 'react'
 import BookCard from '../components/BookCard'
-import { Input, FormBtn } from "../components/Form"
+import { Input, buttonForm } from "../components/Form"
 const axios = require('axios')
 
 function Search() {
@@ -13,9 +13,9 @@ function Search() {
     useEffect(() => {
     }, [])
 
-    function renderBooks(q_terms) {
+    function renderBooks(query) {
 
-        var base_url = `https://www.googleapis.com/books/v1/volumes?q=${q_terms}&maxResults=5&orderBy=relevance`
+        var base_url = `https://www.googleapis.com/books/v1/volumes?q=${query}&maxResults=5&orderBy=relevance`
 
         axios.get(base_url)
             .then((res) => {
@@ -24,16 +24,16 @@ function Search() {
             .catch(err => console.log(err))
     }
 
-    let booksToRender;
+    let bookstoLoad;
     if (books) {
-        booksToRender = books.map(book => {
+        bookstoLoad = books.map(book => {
         return <BookCard data={book}/>
         });
     } else {
-        booksToRender = "Loading...";
+        bookstoLoad = "Rendering books";
     }
 
-    // Handles updating component state when the user types into the input field
+
     function handleInputChange(event) {
         const { name, value } = event.target;
         setFormObject({...formObject, [name]: value})
@@ -55,16 +55,16 @@ function Search() {
                     placeholder="Seach Term"
                     value={formObject.search}
                 />
-                <FormBtn
+                <buttonForm
                     disabled={!(formObject.search)}
                     onClick={handleFormSubmit}
                 >
-                    Submit Book
-                </FormBtn>
+                    Search Book Title in Google
+                </buttonForm>
 
             </div>
-            <h1>Books</h1>
-            {booksToRender}
+            <h1>List of matching items</h1>
+            {bookstoLoad}
         </div>
     )
 }
