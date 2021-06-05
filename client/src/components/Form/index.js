@@ -1,5 +1,12 @@
 import React from "react";
 
+export function Input(props) {
+  return (
+    <div className="form-group">
+      <input className="form-control" {...props} />
+    </div>
+  );
+}
 
 export function TextField(props) {
   return (
@@ -9,21 +16,10 @@ export function TextField(props) {
   );
 }
 
-
-export function buttonForm(props) {
+export function FormBtn(props) {
   return (
     <button {...props} style={{marginBottom: 10 }} className="btn btn-success">
       {props.children}
     </button>
   );
 }
-
-export function Input(props) {
-  return (
-    <div className="form-group">
-      <input className="form-control" {...props} />
-    </div>
-  );
-}
-
-

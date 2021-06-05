@@ -1,6 +1,6 @@
 import React, { useEffect, useState  } from 'react'
 import BookCard from '../components/BookCard'
-import { Input, buttonForm } from "../components/Form"
+import { Input, FormBtn } from "../components/Form"
 const axios = require('axios')
 
 function Search() {
@@ -55,12 +55,12 @@ function Search() {
                     placeholder="Seach Term"
                     value={formObject.search}
                 />
-                <buttonForm
+                <FormBtn
                     disabled={!(formObject.search)}
                     onClick={handleFormSubmit}
                 >
                     Search Book Title in Google
-                </buttonForm>
+                </FormBtn>
 
             </div>
             <h1>List of matching items</h1>
