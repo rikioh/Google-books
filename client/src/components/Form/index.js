@@ -18,7 +18,7 @@ export function TextField(props) {
 
 export function FormBtn(props) {
   return (
-    <button {...props} style={{marginBottom: 10 }} className="btn btn-success">
+    <button {...props} style={{marginBottom: 10 }} className="btn btn-primary">
       {props.children}
     </button>
   );
