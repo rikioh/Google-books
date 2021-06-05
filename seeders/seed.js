@@ -8,18 +8,18 @@ mongoose.connect(
 
 const bookSeed = [
     {
-        title: 'test',
-        author: ['test'],
-        image: 'test',
-        link: 'test',
-        description: 'test'
+        title: 'book',
+        author: ['bookauthor'],
+        image: 'bookimage',
+        link: 'booklink',
+        description: 'book'
     },
     {
-        title: 'test2',
-        author: ['test2'],
-        image: 'test2',
-        link: 'test2',
-        description: 'test2'
+        title: 'book2',
+        author: ['bookauthor2'],
+        image: 'bookimage2',
+        link: 'booklink2',
+        description: 'book2'
     }
 ]
 
