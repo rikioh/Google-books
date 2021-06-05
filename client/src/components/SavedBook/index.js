@@ -33,7 +33,7 @@ class BookCard extends Component {
                     <div className='row g-0'>
                         <div className='col-md-3'>
                             <div className='row'>
-                                <img className='img' src={this.props.data.image}></img>
+                                <img className='img' src={this.props.data.img}></img>
                             </div>
                             <a href={this.props.data.link} className="btn btn-primary m-1" target='_blank'>View on Google</a>
                             <button type='submit' className='btn btn-primary' onClick={()=>this.deleteBook()}>Delete</button>

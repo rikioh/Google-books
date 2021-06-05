@@ -22,7 +22,7 @@ class BookCard extends Component {
             title: this.state.props.data.volumeInfo.title,
             author: this.state.props.data.volumeInfo.authors,
             description: this.state.props.data.volumeInfo.description,
-            image: this.state.props.data.volumeInfo.imageLinks.thumbnail,
+            img: this.state.props.data.volumeInfo.imageLinks.thumbnail,
             link: this.state.props.data.volumeInfo.previewLink,
         }
 

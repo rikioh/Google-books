@@ -5,7 +5,7 @@ const axios = require('axios')
 
 function Search() {
 
-    const [books, setBooks] = useState([])
+    const [books, stateBooks] = useState([])
     const [formObject, setFormObject] = useState({
         search: ""
       })
@@ -13,13 +13,13 @@ function Search() {
     useEffect(() => {
     }, [])
 
-    function loadBooks(q_terms) {
+    function renderBooks(q_terms) {
 
         var base_url = `https://www.googleapis.com/books/v1/volumes?q=${q_terms}&maxResults=5&orderBy=relevance`
 
         axios.get(base_url)
             .then((res) => {
-                setBooks(res.data.items)
+                stateBooks(res.data.items)
             })
             .catch(err => console.log(err))
     }
@@ -41,7 +41,7 @@ function Search() {
 
     function handleFormSubmit(event) {
         event.preventDefault();
-        loadBooks(formObject.search)
+        renderBooks(formObject.search)
       };
 
 

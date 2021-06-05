@@ -1,26 +1,24 @@
 import React, { useEffect, useState } from "react";
 import Jumbotron from "../components/Jumbotron";
-import DeleteBtn from "../components/DeleteBtn";
+import buttonDelete from "../components/buttonDelete";
 import API from "../utils/API";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
 
 function Books() {
-  // Setting our component's initial state
-  const [books, setBooks] = useState([])
+
+  const [books, stateBooks] = useState([])
   const [formObject, setFormObject] = useState({})
 
-  // Load all books and store them with setBooks
   useEffect(() => {
-    loadBooks()
+    renderBooks()
   }, [])
 
-  // Loads all books and sets them to books
-  function loadBooks() {
-    API.getBooks()
+  function renderBooks() {
+    API.retrieveBooks()
       .then(res => 
-        setBooks(res.data)
+        stateBooks(res.data)
       )
       .catch(err => console.log(err));
   };
@@ -31,33 +29,33 @@ function Books() {
         <Row>
           <Col size="md-6">
             <Jumbotron>
-              <h1>What Books Should I Read?</h1>
+              <h1>Add a books information.</h1>
             </Jumbotron>
             <form>
               <Input
                 onChange={() => {}}
                 name="title"
-                placeholder="Title (required)"
+                placeholder="Title (needed)"
               />
               <Input
                 onChange={() => {}}
                 name="author"
-                placeholder="Author (required)"
+                placeholder="Author (needed)"
               />
               <Input
                 onChange={() => {}}
                 name="link"
-                placeholder="Link (Optional)"
+                placeholder="Link"
               />
               <Input
                 onChange={() => {}}
                 name="image"
-                placeholder="Image (Optional)"
+                placeholder="Img"
               />
               <TextArea
                 onChange={() => {}}
-                name="synopsis"
-                placeholder="Description (Optional)"
+                name="description"
+                placeholder="Description"
               />
               
               <FormBtn
@@ -77,18 +75,18 @@ function Books() {
                 {books.map(book => {
                   return (
                     <ListItem key={book._id}>
-                      <a href={"/books/" + book._id}>
+                      <a href={`/books/${book._id}`}>
                         <strong>
-                          {book.title} by {book.author}
+                          {book.title} written by {book.author}
                         </strong>
                       </a>
-                      <DeleteBtn onClick={() =>{}} />
+                      <buttonDelete onClick={() =>{}} />
                     </ListItem>
                   );
                 })}
               </List>
             ) : (
-              <h3>No Results to Display</h3>
+              <h3>There are zero results</h3>
             )}
           </Col>
         </Row>

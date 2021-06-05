@@ -4,24 +4,24 @@ import BookCard from '../components/SavedBook'
 
 function Saved() {
 
-    const [books, setBooks] = useState([])
+    const [books, stateBooks] = useState([])
 
     useEffect(() => {
-        API.getBooks()
+        API.retrieveBooks()
             .then(res => {
-                setBooks(res.data)
+                stateBooks(res.data)
                 console.log(res.data);
             })
             .then(() => console.log(books))
             .catch(err => console.log(err))
 
-        setBooks([1, 2, 3])
+        stateBooks([1, 2, 3])
 
     }, [])
 
     return (
         <div>
-            <h1>Saved</h1>
+            <h1>This book has been saved</h1>
             {books.map(book => (
                 <BookCard data={book}/>
             ))}

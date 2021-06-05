@@ -10,14 +10,14 @@ const bookSeed = [
     {
         title: 'test',
         author: ['test'],
-        image: 'test',
+        img: 'test',
         link: 'test',
         description: 'test'
     },
     {
         title: 'test2',
         author: ['test2'],
-        image: 'test2',
+        img: 'test2',
         link: 'test2',
         description: 'test2'
     }

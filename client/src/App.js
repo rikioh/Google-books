@@ -1,11 +1,9 @@
 import React from "react";
-import Books from "./pages/Books";
-import Nav from "./components/Nav";
-import Search from './pages/Search'
+import Search from './pages/search'
 import Navbar from './components/Navbar'
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Wrapper from './components/Wrapper'
-import Saved from './pages/Saved'
+import Saved from './pages/saved'
 
 
 function App() {
